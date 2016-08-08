@@ -42,7 +42,7 @@ If you are using the default configuration, just create a `dump.sql` file in the
 ## Installed software
 * Apache 2
 * MySQL
-* PHP 5.4 (with mysql, curl, mcrypt, memcached, gd)
+* PHP 5.6 (with mysql, curl, mcrypt, memcached, gd)
 * memcached
 * postfix
 * vim, git, screen, curl, composer

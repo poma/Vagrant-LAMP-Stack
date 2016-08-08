@@ -26,8 +26,7 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = :latest
 
   # Define VM box to use
-  config.vm.box = "precise32"
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box = "ubuntu/trusty64"
 
   # Set share folder
   config.vm.synced_folder "./" , "/var/www/" + project_name + "/", :mount_options => ["dmode=777", "fmode=666"]

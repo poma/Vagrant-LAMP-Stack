@@ -6,7 +6,12 @@
 #
 
 # Install MySQL server & MySQL client
-include_recipe "mysql::server"
+mysql_service 'mysql' do
+  port '3306'
+  version '5.5'
+  initial_root_password node['mysql']['server_root_password']
+  action [:create, :start]
+end
 
 # Create database if it doesn't exist
 ruby_block "create_#{node['app']['name']}_db" do
