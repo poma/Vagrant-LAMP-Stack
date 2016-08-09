@@ -45,11 +45,10 @@ Vagrant.configure("2") do |config|
 
   # Enable and configure chef solo
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe "app::packages"
     chef.add_recipe "app::web_server"
     chef.add_recipe "app::vhost"
-    chef.add_recipe "memcached"
     chef.add_recipe "app::db"
+    chef.add_recipe "usability"
     chef.json = {
       :app => {
         # Project name
@@ -65,9 +64,6 @@ Vagrant.configure("2") do |config|
         # Document root for Apache vhost
         :docroot        => "/var/www/" + project_name + "/public",
 
-        # General packages
-        :packages   => %w{ vim git screen curl },
-        
         # PHP packages
         :php_packages   => %w{ php5-mysqlnd php5-curl php5-mcrypt php5-memcached php5-gd }
       },
