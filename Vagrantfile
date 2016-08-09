@@ -49,6 +49,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "app::vhost"
     chef.add_recipe "app::db"
     chef.add_recipe "usability"
+    chef.add_recipe "usability::zsh"
     chef.json = {
       :app => {
         # Project name
