@@ -1,6 +1,6 @@
 <?php
 // MySQL
-$mysqli = @new mysqli('localhost', 'root', 'root');
+$mysqli = @new mysqli('127.0.0.1', 'root', 'root');
 
 $mysql_running = true;
 if (mysqli_connect_errno()) {

@@ -20,10 +20,10 @@ node['app']['php_packages'].each do |a_package|
   package a_package
 end
 
-# Fix deprecated comments in PHP ini files by replacing '#' with ';'
-bash "fix-phpcomments" do
-  code "find /etc/php5/cli/conf.d/ -name '*.ini' -exec sed -i -re 's/^(\\s*)#(.*)/\\1;\\2/g' {} \\;"
-  notifies :restart, resources("service[apache2]"), :delayed
+bash "mcrypt" do
+    code <<-EOH
+        /usr/sbin/php5enmod mcrypt
+    EOH
 end
 
 # Install Composer

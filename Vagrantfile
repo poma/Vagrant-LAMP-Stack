@@ -73,6 +73,9 @@ Vagrant.configure("2") do |config|
         :server_debian_password => database_password,
         :bind_address           => ip_address,
         :allow_remote_root      => true
+      },
+      :apache => {
+        :mpm => "prefork"
       }
     }
   end
